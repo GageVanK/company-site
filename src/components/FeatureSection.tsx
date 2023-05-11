@@ -21,6 +21,7 @@ import {
   IconBrandFacebook,
   IconPhone
 } from "@tabler/icons-react";
+import { Slide } from "react-awesome-reveal";
 
 const mockdata = [
   {
@@ -112,22 +113,24 @@ export default function FeatureSection() {
   const { classes, theme } = useStyles();
 
   const features = mockdata.map((feature) => (
-    <Card
-      key={feature.title}
-      shadow="md"
-      radius="md"
-      className={classes.card}
-      padding="xl"
-      withBorder
-    >
-      <feature.icon size={rem(50)} stroke={2} color={"green"} />
-      <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
-        {feature.title}
-      </Text>
-      <Text fz="sm" c="dimmed" mt="sm">
-        {feature.description}
-      </Text>
-    </Card>
+    <Slide cascade>
+      <Card
+        key={feature.title}
+        shadow="md"
+        radius="md"
+        className={classes.card}
+        padding="xl"
+        withBorder
+      >
+        <feature.icon size={rem(50)} stroke={2} color={"green"} />
+        <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+          {feature.title}
+        </Text>
+        <Text fz="sm" c="dimmed" mt="sm">
+          {feature.description}
+        </Text>
+      </Card>
+    </Slide>
   ));
 
   return (
