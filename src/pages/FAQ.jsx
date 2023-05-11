@@ -10,6 +10,7 @@ import {
   Center
 } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
+import Fade from "@stahl.luke/react-reveal/Fade";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -115,72 +116,85 @@ export default function FAQ() {
                   </ThemeIcon>
                 }
               >
-                <Accordion.Item className={classes.item} value="reset-password">
-                  <Accordion.Control>
-                    How often should I have my roof inspected?
-                  </Accordion.Control>
-                  <Accordion.Panel>
-                    It's recommended to have your roof inspected at least once a
-                    year, preferably in the spring or fall. This can help
-                    identify any potential issues before they become major
-                    problems.
-                  </Accordion.Panel>
-                </Accordion.Item>
-
-                <Accordion.Item
-                  className={classes.item}
-                  value="another-account"
-                >
-                  <Accordion.Control>
-                    How do I know if I need a new roof?
-                  </Accordion.Control>
-                  <Accordion.Panel>
-                    Signs that you may need a new roof include cracked or
-                    missing shingles, leaks, water damage, and visible wear and
-                    tear. If you're unsure about the condition of your roof,
-                    it's best to contact us for a free inspection.
-                  </Accordion.Panel>
-                </Accordion.Item>
-
-                <Accordion.Item className={classes.item} value="newsletter">
-                  <Accordion.Control>
-                    What should I do if my property has storm damage?
-                  </Accordion.Control>
-                  <Accordion.Panel>
-                    If you suspect that your property has storm damage, the
-                    first step is to contact us for an inspection. We can assess
-                    the damage and provide recommendations for repairs or
-                    replacement. It's also important to document any damage for
-                    insurance purposes.
-                  </Accordion.Panel>
-                </Accordion.Item>
-
-                <Accordion.Item className={classes.item} value="credit-card">
-                  <Accordion.Control>
-                    How does the payment process work?
-                  </Accordion.Control>
-                  <Accordion.Panel>
-                    We understand that home improvement projects can be a
-                    significant investment. We typically require a deposit
-                    upfront to secure your spot in our schedule. The remaining
-                    balance will be due upon completion of the project. We
-                    accept a range of payment options, including cash, check,
-                    and credit card.
-                  </Accordion.Panel>
-                </Accordion.Item>
-
-                <Accordion.Item className={classes.item} value="payment">
-                  <Accordion.Control>
-                    Do you provide warranties for your work?
-                  </Accordion.Control>
-                  <Accordion.Panel>
-                    Yes, we stand behind our work and offer warranties for our
-                    services. The length and terms of the warranty will depend
-                    on the specific project and materials used. We'll provide
-                    all the details upfront so you can make an informed
-                    decision.
-                  </Accordion.Panel>
-                </Accordion.Item>
+                <Fade>
+                  <Accordion.Item
+                    className={classes.item}
+                    value="reset-password"
+                  >
+                    <Accordion.Control>
+                      How often should I have my roof inspected?
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      It's recommended to have your roof inspected at least once
+                      a year, preferably in the spring or fall. This can help
+                      identify any potential issues before they become major
+                      problems.
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Fade>
+                <Space h="md" />
+                <Fade>
+                  <Accordion.Item
+                    className={classes.item}
+                    value="another-account"
+                  >
+                    <Accordion.Control>
+                      How do I know if I need a new roof?
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      Signs that you may need a new roof include cracked or
+                      missing shingles, leaks, water damage, and visible wear
+                      and tear. If you're unsure about the condition of your
+                      roof, it's best to contact us for a free inspection.
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Fade>
+                <Space h="md" />
+                <Fade>
+                  <Accordion.Item className={classes.item} value="newsletter">
+                    <Accordion.Control>
+                      What should I do if my property has storm damage?
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      If you suspect that your property has storm damage, the
+                      first step is to contact us for an inspection. We can
+                      assess the damage and provide recommendations for repairs
+                      or replacement. It's also important to document any damage
+                      for insurance purposes.
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Fade>
+                <Space h="md" />
+                <Fade>
+                  <Accordion.Item className={classes.item} value="credit-card">
+                    <Accordion.Control>
+                      How does the payment process work?
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      We understand that home improvement projects can be a
+                      significant investment. We typically require a deposit
+                      upfront to secure your spot in our schedule. The remaining
+                      balance will be due upon completion of the project. We
+                      accept a range of payment options, including cash, check,
+                      and credit card.
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Fade>
+                <Space h="md" />
+                <Fade>
+                  <Accordion.Item className={classes.item} value="payment">
+                    <Accordion.Control>
+                      Do you provide warranties for your work?
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      Yes, we stand behind our work and offer warranties for our
+                      services. The length and terms of the warranty will depend
+                      on the specific project and materials used. We'll provide
+                      all the details upfront so you can make an informed
+                      decision.
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Fade>
               </Accordion>
             </Container>
           </div>

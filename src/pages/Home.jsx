@@ -55,6 +55,7 @@ import { HomeCarousel } from "../components/HomeCarousel";
 import { IconArrowUp, IconMail, IconPhone } from "@tabler/icons-react";
 import Slide from "@stahl.luke/react-reveal/Slide";
 import Fade from "@stahl.luke/react-reveal/Fade";
+import FAQ from "./FAQ";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -241,6 +242,14 @@ export default function Home() {
       <Divider my="sm" />
       <Space h={55} />
 
+      <Center>
+        <FAQ />
+      </Center>
+
+      <Space h={55} />
+      <Divider my="sm" />
+      <Space h={55} />
+
       <Group position="center">
         <Badge
           variant="gradient"
@@ -257,7 +266,7 @@ export default function Home() {
       <Group className={classes.root}>
         <Paper shadow="xl" p="lg" withBorder>
           <Center>
-            <Badge variant="light" color="lime" size="xl" radius="xs">
+            <Badge variant="outline" color="lime" size={222} radius="xs">
               Roofing
             </Badge>
           </Center>
@@ -553,7 +562,7 @@ export default function Home() {
 
         <Paper shadow="xl" p="lg" withBorder>
           <Center>
-            <Badge variant="light" color="lime" size="xl" radius="xs">
+            <Badge variant="outline" color="lime" size={222} radius="xs">
               Interior
             </Badge>
           </Center>
@@ -684,7 +693,7 @@ export default function Home() {
         <Group className={classes.root2}>
           <Paper shadow="xl" p="lg" withBorder>
             <Center>
-              <Badge variant="light" color="lime" size="xl" radius="xs">
+              <Badge variant="outline" color="lime" size={222} radius="xs">
                 Exterior
               </Badge>
             </Center>

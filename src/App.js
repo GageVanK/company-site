@@ -3,6 +3,7 @@ import ContactUs from "./pages/ContactUs";
 import FAQ from "./pages/FAQ";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HeaderResponsive } from "./components/Header";
+import FooterCentered from "./components/FooterCentered";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/" element={<Home />} />
       </Routes>
+      <FooterCentered />
     </BrowserRouter>
   );
 }
