@@ -35,12 +35,12 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
   title: {
     color:
       variant === "gradient"
-        ? theme.colors.gray[6]
+        ? theme.colors.gray[4]
         : theme.colors[theme.primaryColor][0]
   },
 
   description: {
-    color: variant === "gradient" ? theme.black : theme.white
+    color: variant === "white" ? theme.black : theme.white
   }
 }));
 
@@ -63,7 +63,7 @@ function ContactIcon({
   const { classes, cx } = useStyles({ variant });
   return (
     <div className={cx(classes.wrapper, className)} {...others}>
-      {variant === "gradient" ? (
+      {variant === "white" ? (
         <ThemeIcon size={40} radius="md" className={classes.icon}>
           <Icon size="1.5rem" />
         </ThemeIcon>
@@ -103,7 +103,7 @@ const MOCKDATA = [
   }
 ];
 
-export default function ContactIconsList({
+export function ContactIconsList({
   data = MOCKDATA,
   variant
 }: ContactIconsListProps) {

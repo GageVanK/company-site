@@ -20,7 +20,7 @@ import {
   IconX,
   IconCheck
 } from "@tabler/icons-react";
-import ContactIconsList from "../components/ContactIconsList";
+import { ContactIconsList } from "../components/ContactIconsList";
 import { useForm } from "@mantine/form";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
@@ -149,7 +149,7 @@ export default function ContactUsBox() {
             Leave your message and we will get back to you within 24 hours
           </Text>
 
-          <ContactIconsList variant="white" />
+          <ContactIconsList />
           <Space h="md" />
           <Group spacing={1} position="left" noWrap>
             <ActionIcon
