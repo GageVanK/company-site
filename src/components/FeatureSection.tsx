@@ -21,7 +21,7 @@ import {
   IconBrandFacebook,
   IconPhone
 } from "@tabler/icons-react";
-import { Slide } from "react-awesome-reveal";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const mockdata = [
   {
@@ -113,7 +113,11 @@ export default function FeatureSection() {
   const { classes, theme } = useStyles();
 
   const features = mockdata.map((feature) => (
-    <Slide cascade>
+    <ScrollAnimation
+      delay={100}
+      animateIn="bounceInRight"
+      animateOut="bounceOutLeft"
+    >
       <Card
         key={feature.title}
         shadow="md"
@@ -130,7 +134,7 @@ export default function FeatureSection() {
           {feature.description}
         </Text>
       </Card>
-    </Slide>
+    </ScrollAnimation>
   ));
 
   return (
