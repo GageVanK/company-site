@@ -96,7 +96,11 @@ const MOCKDATA = [
     description: "375 N State Rd 434 #2207, Altamonte Springs, FL",
     icon: IconMapPin
   },
-  { title: "Working hours", description: "6 a.m. – 7 p.m.", icon: IconSun }
+  {
+    title: "Working hours",
+    description: "Mon-Fri: 7AM – 8PM  |  Sat: 9AM – 5PM",
+    icon: IconSun
+  }
 ];
 
 export default function ContactIconsList({
