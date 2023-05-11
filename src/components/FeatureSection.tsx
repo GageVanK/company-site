@@ -21,8 +21,8 @@ import {
   IconBrandFacebook,
   IconPhone
 } from "@tabler/icons-react";
+import Slide from "react-awesome-reveal";
 
-import { Slide } from "react-awesome-reveal";
 const mockdata = [
   {
     title: "Residential Roofing",
