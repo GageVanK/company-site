@@ -35,12 +35,12 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
   title: {
     color:
       variant === "gradient"
-        ? theme.colors.gray[4]
+        ? theme.colors.gray[6]
         : theme.colors[theme.primaryColor][0]
   },
 
   description: {
-    color: variant === "white" ? theme.black : theme.white
+    color: variant === "gradient" ? theme.black : theme.white
   }
 }));
 
@@ -63,7 +63,7 @@ function ContactIcon({
   const { classes, cx } = useStyles({ variant });
   return (
     <div className={cx(classes.wrapper, className)} {...others}>
-      {variant === "white" ? (
+      {variant === "gradient" ? (
         <ThemeIcon size={40} radius="md" className={classes.icon}>
           <Icon size="1.5rem" />
         </ThemeIcon>
@@ -96,14 +96,10 @@ const MOCKDATA = [
     description: "375 N State Rd 434 #2207, Altamonte Springs, FL",
     icon: IconMapPin
   },
-  {
-    title: "Working hours",
-    description: "Mon-Fri: 7AM – 8PM  |  Sat: 9AM – 5PM",
-    icon: IconSun
-  }
+  { title: "Working hours", description: "6 a.m. – 7 p.m.", icon: IconSun }
 ];
 
-export function ContactIconsList({
+export default function ContactIconsList({
   data = MOCKDATA,
   variant
 }: ContactIconsListProps) {
