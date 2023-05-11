@@ -3,7 +3,6 @@ import {
   Image,
   Space,
   Group,
-  Grid,
   Paper,
   Divider,
   Badge,
@@ -12,17 +11,12 @@ import {
   SimpleGrid,
   Card,
   Text,
-  Skeleton,
-  Container,
-  createStyles,
-  useMantineTheme,
-  px
+  createStyles
 } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 import otownlogo from "../assets/otownlogo.jpg";
 import FeatureSection from "../components/FeatureSection";
 import ContactUsBox from "../components/ContactUsBox";
-import FAQ from "../pages/FAQ";
 import ReactBeforeSliderComponent from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
 import ap1 from "../assets/ap1.jpg";
@@ -56,10 +50,11 @@ import r5 from "../assets/r5.jpg";
 import r6 from "../assets/r6.jpg";
 import e2 from "../assets/e2.jpg";
 import e3 from "../assets/e3.jpg";
-
 import map from "../assets/map.png";
 import { HomeCarousel } from "../components/HomeCarousel";
 import { IconArrowUp, IconMail, IconPhone } from "@tabler/icons-react";
+import Slide from "@stahl.luke/react-reveal/Slide";
+import Fade from "@stahl.luke/react-reveal/Fade";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -229,7 +224,9 @@ export default function Home() {
       </Group>
       <Space h="md" />
       <Center>
-        <Image maw={555} mx="auto" radius="md" src={map} withPlaceholder />
+        <Fade>
+          <Image maw={555} mx="auto" radius="md" src={map} withPlaceholder />
+        </Fade>
       </Center>
 
       <Space h={55} />
@@ -274,271 +271,282 @@ export default function Home() {
               { maxWidth: "lg", cols: 2 }
             ]}
           >
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B1}
-                  secondImage={A1}
-                />
-              </Card.Section>
-              <Card.Section inheritPadding mt="sm" pb="md">
-                <SimpleGrid cols={2}>
-                  <Image radius="md" src={r1} withPlaceholder />
-                  <Image radius="md" src={r2} withPlaceholder />
-                </SimpleGrid>
-              </Card.Section>
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Kissimee, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+            <Slide right>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B1}
+                    secondImage={A1}
+                  />
+                </Card.Section>
+                <Card.Section inheritPadding mt="sm" pb="md">
+                  <SimpleGrid cols={2}>
+                    <Image radius="md" src={r1} withPlaceholder />
+                    <Image radius="md" src={r2} withPlaceholder />
+                  </SimpleGrid>
+                </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Kissimee, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Wind Damaged Roof</Text>
-              </Group>
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Wind Damaged Roof</Text>
+                </Group>
 
-              <Text size="sm" color="dimmed">
-                Here is a 18+ year old roof with multiple wind damaged shingles,
-                verified by the insurance company.
-              </Text>
+                <Text size="sm" color="dimmed">
+                  Here is a 18+ year old roof with multiple wind damaged
+                  shingles, verified by the insurance company.
+                </Text>
 
-              <Space h="sm" />
-              <Text size="xs">
-                Shingle Selection: Certainteed Landmark - Pewter Grey
-              </Text>
-            </Card>
+                <Space h="sm" />
+                <Text size="xs">
+                  Shingle Selection: Certainteed Landmark - Pewter Grey
+                </Text>
+              </Card>
+            </Slide>
+            <Slide right>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B2}
+                    secondImage={A2}
+                  />
+                </Card.Section>
+                <Card.Section inheritPadding mt="sm" pb="md">
+                  <SimpleGrid cols={2}>
+                    <Image radius="md" src={r3} withPlaceholder />
+                    <Image radius="md" src={r4} withPlaceholder />
+                  </SimpleGrid>
+                </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Winter Haven, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B2}
-                  secondImage={A2}
-                />
-              </Card.Section>
-              <Card.Section inheritPadding mt="sm" pb="md">
-                <SimpleGrid cols={2}>
-                  <Image radius="md" src={r3} withPlaceholder />
-                  <Image radius="md" src={r4} withPlaceholder />
-                </SimpleGrid>
-              </Card.Section>
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Winter Haven, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Hurricane Damaged Roof</Text>
+                </Group>
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Hurricane Damaged Roof</Text>
-              </Group>
+                <Text size="sm" color="dimmed">
+                  The roof seen here suffered wind damages from hurricane Ian.
+                  O-Town Solutions provides estimates and the most thorough,
+                  detailed inspections for FREE! With years of experience
+                  working with the insurance companies is no challenge to us.
+                </Text>
 
-              <Text size="sm" color="dimmed">
-                The roof seen here suffered wind damages from hurricane Ian.
-                O-Town Solutions provides estimates and the most thorough,
-                detailed inspections for FREE! With years of experience working
-                with the insurance companies is no challenge to us.
-              </Text>
+                <Space h="sm" />
+                <Text size="xs">
+                  Shingle Selection: Certainteed Landmark- Esawn Shake
+                </Text>
+              </Card>
+            </Slide>
 
-              <Space h="sm" />
-              <Text size="xs">
-                Shingle Selection: Certainteed Landmark- Esawn Shake
-              </Text>
-            </Card>
+            <Slide right>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B9}
+                    secondImage={A9}
+                  />
+                </Card.Section>
+                <Card.Section inheritPadding mt="sm" pb="md">
+                  <SimpleGrid cols={2}>
+                    <Image radius="md" src={ap10} withPlaceholder />
+                    <Image radius="md" src={bp11} withPlaceholder />
+                  </SimpleGrid>
+                </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Kissimee, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B9}
-                  secondImage={A9}
-                />
-              </Card.Section>
-              <Card.Section inheritPadding mt="sm" pb="md">
-                <SimpleGrid cols={2}>
-                  <Image radius="md" src={ap10} withPlaceholder />
-                  <Image radius="md" src={bp11} withPlaceholder />
-                </SimpleGrid>
-              </Card.Section>
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Kissimee, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Energy Efficient Roof</Text>
+                </Group>
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Energy Efficient Roof</Text>
-              </Group>
+                <Text size="sm" color="dimmed">
+                  If you have no shade around your home sometimes a lighter
+                  colored roof can help reduce energy costs and keep the
+                  interior cooler because it reflects more sunlight than a
+                  darker roof. This means that less heat is absorbed into the
+                  building, which reduces the amount of energy required to cool
+                  the interior. The shingle seen here is actually Energy Star
+                  rated.
+                </Text>
 
-              <Text size="sm" color="dimmed">
-                If you have no shade around your home sometimes a lighter
-                colored roof can help reduce energy costs and keep the interior
-                cooler because it reflects more sunlight than a darker roof.
-                This means that less heat is absorbed into the building, which
-                reduces the amount of energy required to cool the interior. The
-                shingle seen here is actually Energy Star rated.
-              </Text>
+                <Space h="sm" />
+                <Text size="xs">
+                  Shingle Selection: Certain Landmark - Silver Birch (Energy
+                  Star)
+                </Text>
+              </Card>
+            </Slide>
 
-              <Space h="sm" />
-              <Text size="xs">
-                Shingle Selection: Certain Landmark - Silver Birch (Energy Star)
-              </Text>
-            </Card>
+            <Slide right>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B3}
+                    secondImage={A3}
+                  />
+                </Card.Section>
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B3}
-                  secondImage={A3}
-                />
-              </Card.Section>
+                <Card.Section inheritPadding mt="sm" pb="md">
+                  <SimpleGrid cols={2}>
+                    <Image radius="md" src={r5} withPlaceholder />
+                    <Image radius="md" src={r6} withPlaceholder />
+                  </SimpleGrid>
+                </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Winter Haven, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-              <Card.Section inheritPadding mt="sm" pb="md">
-                <SimpleGrid cols={2}>
-                  <Image radius="md" src={r5} withPlaceholder />
-                  <Image radius="md" src={r6} withPlaceholder />
-                </SimpleGrid>
-              </Card.Section>
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Winter Haven, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Wind Damaged Roof</Text>
+                </Group>
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Wind Damaged Roof</Text>
-              </Group>
+                <Text size="sm" color="dimmed">
+                  Here we have a 3-tab roof built in 2006 with wind damaged
+                  shingles, multiple leaks, and a cracked skylight. We fully
+                  restored all damaged wood and upgraded our client to an
+                  architectural shingle of their choice.
+                </Text>
 
-              <Text size="sm" color="dimmed">
-                Here we have a 3-tab roof built in 2006 with wind damaged
-                shingles, multiple leaks, and a cracked skylight. We fully
-                restored all damaged wood and upgraded our client to an
-                architectural shingle of their choice.
-              </Text>
+                <Space h="sm" />
+                <Text size="xs">
+                  Shingle Selection: Timberline GAF - Charcoal Black
+                </Text>
+              </Card>
+            </Slide>
+            <Slide right>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B7}
+                    secondImage={A7}
+                  />
+                </Card.Section>
 
-              <Space h="sm" />
-              <Text size="xs">
-                Shingle Selection: Timberline GAF - Charcoal Black
-              </Text>
-            </Card>
+                <Card.Section inheritPadding mt="sm" pb="md">
+                  <Image radius="md" src={bp8} withPlaceholder />
+                </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Kissimee, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B7}
-                  secondImage={A7}
-                />
-              </Card.Section>
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Roof Hail Damage</Text>
+                </Group>
 
-              <Card.Section inheritPadding mt="sm" pb="md">
-                <Image radius="md" src={bp8} withPlaceholder />
-              </Card.Section>
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Kissimee, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+                <Text size="sm" color="dimmed">
+                  Hail can cause serious damage to your roof, leading to leaks
+                  and water damage inside your home. Don't wait until it's too
+                  late – have your roof inspected after a hailstorm to prevent
+                  further issues.
+                </Text>
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Roof Hail Damage</Text>
-              </Group>
+                <Space h="sm" />
+                <Text size="xs">Shingle Selection:</Text>
+              </Card>
+            </Slide>
+            <Slide right>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B4}
+                    secondImage={A4}
+                  />
+                </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Ocoee, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-              <Text size="sm" color="dimmed">
-                Hail can cause serious damage to your roof, leading to leaks and
-                water damage inside your home. Don't wait until it's too late –
-                have your roof inspected after a hailstorm to prevent further
-                issues.
-              </Text>
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Damaged Roof</Text>
+                </Group>
 
-              <Space h="sm" />
-              <Text size="xs">Shingle Selection:</Text>
-            </Card>
+                <Text size="sm" color="dimmed">
+                  Did you know insurance companies view a new roof as a sign of
+                  a well-maintained home, which is less likely to sustain damage
+                  from weather-related events. This is why having a new or
+                  recently replaced roof can help lower your homeowners
+                  insurance premiums. Get your free inspection today!
+                </Text>
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B4}
-                  secondImage={A4}
-                />
-              </Card.Section>
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Ocoee, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
-
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Damaged Roof</Text>
-              </Group>
-
-              <Text size="sm" color="dimmed">
-                Did you know insurance companies view a new roof as a sign of a
-                well-maintained home, which is less likely to sustain damage
-                from weather-related events. This is why having a new or
-                recently replaced roof can help lower your homeowners insurance
-                premiums. Get your free inspection today!
-              </Text>
-
-              <Space h="sm" />
-              <Text size="xs">Shingle Selection: IKO - Oyster Grey</Text>
-            </Card>
+                <Space h="sm" />
+                <Text size="xs">Shingle Selection: IKO - Oyster Grey</Text>
+              </Card>
+            </Slide>
           </SimpleGrid>
         </Paper>
         <Space h="md" />
@@ -559,113 +567,117 @@ export default function Home() {
               { maxWidth: "lg", cols: 2 }
             ]}
           >
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B8}
-                  secondImage={A8}
-                />
-              </Card.Section>
+            <Slide left>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B8}
+                    secondImage={A8}
+                  />
+                </Card.Section>
 
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Orlando, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Orlando, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Interior Water Damage</Text>
-              </Group>
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Interior Water Damage</Text>
+                </Group>
 
-              <Text size="sm" color="dimmed">
-                Interior water damage is a serious issue that can lead to mold
-                growth and structural issues if left untreated. Signs include
-                stains, peeling paint, musty odors, and warped material. Have
-                your roof inspected by a O-Town Solutions to fix the issue and
-                prevent further damage.
-              </Text>
-            </Card>
+                <Text size="sm" color="dimmed">
+                  Interior water damage is a serious issue that can lead to mold
+                  growth and structural issues if left untreated. Signs include
+                  stains, peeling paint, musty odors, and warped material. Have
+                  your roof inspected by a O-Town Solutions to fix the issue and
+                  prevent further damage.
+                </Text>
+              </Card>
+            </Slide>
+            <Slide left>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B6}
+                    secondImage={A6}
+                  />
+                </Card.Section>
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B6}
-                  secondImage={A6}
-                />
-              </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Orlando, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Orlando, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Interior Water Damage</Text>
+                </Group>
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Interior Water Damage</Text>
-              </Group>
+                <Text size="sm" color="dimmed">
+                  Stains on your ceiling are often caused by roof damage, such
+                  as leaks or water infiltration. When water seeps into your
+                  roof, it can damage the underlying structure and cause water
+                  stains and cracks to appear on your ceiling.
+                </Text>
+              </Card>
+            </Slide>
+            <Slide left>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B5}
+                    secondImage={A5}
+                  />
+                </Card.Section>
 
-              <Text size="sm" color="dimmed">
-                Stains on your ceiling are often caused by roof damage, such as
-                leaks or water infiltration. When water seeps into your roof, it
-                can damage the underlying structure and cause water stains and
-                cracks to appear on your ceiling.
-              </Text>
-            </Card>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Orlando, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B5}
-                  secondImage={A5}
-                />
-              </Card.Section>
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Interior Water Damage</Text>
+                </Group>
 
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Orlando, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
-
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Interior Water Damage</Text>
-              </Group>
-
-              <Text size="sm" color="dimmed">
-                Our in-house crew can help restore your interior replacing any
-                damaged areas of your ceiling and repaint it to match the rest
-                of your home.
-              </Text>
-            </Card>
+                <Text size="sm" color="dimmed">
+                  Our in-house crew can help restore your interior replacing any
+                  damaged areas of your ceiling and repaint it to match the rest
+                  of your home.
+                </Text>
+              </Card>
+            </Slide>
           </SimpleGrid>
         </Paper>
 
@@ -678,46 +690,47 @@ export default function Home() {
             </Center>
             <Divider my="sm" variant="dotted" />
             <Space h="md" />
+            <Slide right>
+              <Card
+                h="100%"
+                w="100%"
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section>
+                  <ReactBeforeSliderComponent
+                    feelsOnlyTheDelimiter="true"
+                    firstImage={B10}
+                    secondImage={A10}
+                  />
+                </Card.Section>
+                <Card.Section inheritPadding mt="sm" pb="md">
+                  <SimpleGrid cols={2}>
+                    <Image radius="md" src={e2} withPlaceholder />
+                    <Image radius="md" src={e3} withPlaceholder />
+                  </SimpleGrid>
+                </Card.Section>
+                <Space h="sm" />
+                <Group position="right">
+                  <Badge variant="outline" color="lime" size="sm">
+                    Kissimee, FL
+                  </Badge>
+                </Group>
+                <Divider my="sm" />
 
-            <Card
-              h="100%"
-              w="100%"
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-            >
-              <Card.Section>
-                <ReactBeforeSliderComponent
-                  feelsOnlyTheDelimiter="true"
-                  firstImage={B10}
-                  secondImage={A10}
-                />
-              </Card.Section>
-              <Card.Section inheritPadding mt="sm" pb="md">
-                <SimpleGrid cols={2}>
-                  <Image radius="md" src={e2} withPlaceholder />
-                  <Image radius="md" src={e3} withPlaceholder />
-                </SimpleGrid>
-              </Card.Section>
-              <Space h="sm" />
-              <Group position="right">
-                <Badge variant="outline" color="lime" size="sm">
-                  Kissimee, FL
-                </Badge>
-              </Group>
-              <Divider my="sm" />
+                <Group position="center" mt="md" mb="xs">
+                  <Text weight={500}>Exterior Detailing</Text>
+                </Group>
 
-              <Group position="center" mt="md" mb="xs">
-                <Text weight={500}>Exterior Detailing</Text>
-              </Group>
-
-              <Text size="sm" color="dimmed">
-                At O-Town Solutions we offer more than just roofing and we
-                believe quality is key in all the services we provide from
-                materials to workmanship.
-              </Text>
-            </Card>
+                <Text size="sm" color="dimmed">
+                  At O-Town Solutions we offer more than just roofing and we
+                  believe quality is key in all the services we provide from
+                  materials to workmanship.
+                </Text>
+              </Card>
+            </Slide>
           </Paper>
         </Group>
       </Group>

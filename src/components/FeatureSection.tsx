@@ -21,8 +21,7 @@ import {
   IconBrandFacebook,
   IconPhone
 } from "@tabler/icons-react";
-import ScrollAnimation from "react-animate-on-scroll";
-
+import Slide from "@stahl.luke/react-reveal/Slide";
 const mockdata = [
   {
     title: "Residential Roofing",
@@ -113,11 +112,7 @@ export default function FeatureSection() {
   const { classes, theme } = useStyles();
 
   const features = mockdata.map((feature) => (
-    <ScrollAnimation
-      delay={100}
-      animateIn="bounceInRight"
-      animateOut="bounceOutLeft"
-    >
+    <Slide left cascade>
       <Card
         key={feature.title}
         shadow="md"
@@ -134,7 +129,7 @@ export default function FeatureSection() {
           {feature.description}
         </Text>
       </Card>
-    </ScrollAnimation>
+    </Slide>
   ));
 
   return (
