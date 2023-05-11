@@ -10,19 +10,18 @@ import {
   rem,
   UnstyledButton,
   Image,
-  Button,
-  Space,
-  Center
+  ActionIcon
 } from "@mantine/core";
+import { IconPhone } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Link } from "react-router-dom";
 import otownlogo from "../assets/otownlogo.jpg";
-
+import { useNavigate } from "react-router-dom";
 const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "relative",
+    position: "fixed",
     zIndex: 1
   },
 
@@ -93,7 +92,7 @@ const useStyles = createStyles((theme) => ({
         variant: "light",
         color: "lime"
       }).background,
-      color: theme.fn.variant({ variant: "light", color: "green" }).color
+      color: theme.fn.variant({ variant: "light", color: "lime" }).color
     }
   }
 }));
@@ -105,6 +104,7 @@ const links = [
 ];
 
 export function HeaderResponsive() {
+  const navigate = useNavigate();
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
@@ -119,6 +119,7 @@ export function HeaderResponsive() {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+        navigate(link.link);
         close();
       }}
     >
@@ -142,11 +143,18 @@ export function HeaderResponsive() {
         </UnstyledButton>
         <Group spacing={5} className={classes.links}>
           {items}
-          <Space w="xs" />
 
-          <Button variant="light" size="sm" color="lime">
-            Request Free Consultation
-          </Button>
+          <ActionIcon
+            target="_blank"
+            component="a"
+            href="tel:+1 4079424763"
+            color="lime"
+            size="lg"
+            radius="xl"
+            variant="subtle"
+          >
+            <IconPhone size="1.625rem" />
+          </ActionIcon>
         </Group>
 
         <Burger
