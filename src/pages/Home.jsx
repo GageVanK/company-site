@@ -749,7 +749,9 @@ export default function Home() {
       <Space h={55} />
 
       <Center ref={targetRef1}>
-        <ContactUsBox />
+        <Slide bottom>
+          <ContactUsBox />
+        </Slide>
       </Center>
 
       <Space h={55} />
