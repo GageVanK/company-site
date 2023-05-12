@@ -261,7 +261,7 @@ export default function Home() {
         </Badge>
       </Center>
 
-      <Space h="lg" />
+      <Space h={77} />
 
       <Center>
         <Badge variant="outline" color="lime" size={222} radius="xs">
@@ -555,15 +555,13 @@ export default function Home() {
           </Slide>
         </SimpleGrid>
 
-        <Space h="lg" />
+        <Space h={77} />
 
         <Center>
           <Badge variant="outline" color="lime" size={222} radius="xs">
             Interior
           </Badge>
         </Center>
-
-        <Divider my="sm" variant="dotted" />
 
         <SimpleGrid
           cols={3}
@@ -686,14 +684,12 @@ export default function Home() {
           </Slide>
         </SimpleGrid>
       </Group>
-      <Space h="lg" />
+      <Space h={77} />
 
       <Group position="center" className={classes.root2}>
         <Badge variant="outline" color="lime" size={222} radius="xs">
           Exterior
         </Badge>
-
-        <Divider my="sm" variant="dotted" />
 
         <Slide right>
           <Card
