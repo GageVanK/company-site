@@ -11,7 +11,8 @@ import {
   SimpleGrid,
   Card,
   Text,
-  createStyles
+  createStyles,
+  Title
 } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 import otownlogo from "../assets/otownlogo.jpg";
@@ -264,9 +265,9 @@ export default function Home() {
       <Space h={77} />
 
       <Center>
-        <Badge variant="outline" color="lime" size={222} radius="xs">
+        <Title size="h4" weight={777} color={"#006400"}>
           Roofing
-        </Badge>
+        </Title>
       </Center>
 
       <Space h="lg" />
@@ -554,15 +555,17 @@ export default function Home() {
             </Card>
           </Slide>
         </SimpleGrid>
+      </Group>
+      <Space h={77} />
 
-        <Space h={77} />
+      <Center>
+        <Title size="h4" weight={777} color={"#006400"}>
+          Interior
+        </Title>
+      </Center>
 
-        <Center>
-          <Badge variant="outline" color="lime" size={222} radius="xs">
-            Interior
-          </Badge>
-        </Center>
-
+      <Space h="lg" />
+      <Group position="center" className={classes.root}>
         <SimpleGrid
           cols={3}
           breakpoints={[
@@ -687,9 +690,13 @@ export default function Home() {
       <Space h={77} />
 
       <Group position="center" className={classes.root2}>
-        <Badge variant="outline" color="lime" size={222} radius="xs">
-          Exterior
-        </Badge>
+        <Center>
+          <Title size="h4" weight={777} color={"#006400"}>
+            Exterior
+          </Title>
+        </Center>
+
+        <Space h="lg" />
 
         <Slide right>
           <Card
