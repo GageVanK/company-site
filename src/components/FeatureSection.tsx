@@ -163,7 +163,7 @@ export default function FeatureSection() {
           href="https://www.facebook.com/profile.php?id=100090060669297"
           size="lg"
         >
-          <IconBrandFacebook size={33} stroke-width={1.5} color={"#225465"} />
+          <IconBrandFacebook size={33} stroke-width={1.5} color={"#006400"} />
         </ActionIcon>
 
         <ActionIcon
@@ -172,7 +172,7 @@ export default function FeatureSection() {
           href="https://www.instagram.com/otownsolutions/"
           size="lg"
         >
-          <IconBrandInstagram size={33} stroke-width={1.5} color={"#225465"} />
+          <IconBrandInstagram size={33} stroke-width={1.5} color={"#006400"} />
         </ActionIcon>
         <ActionIcon
           target="_blank"
@@ -180,7 +180,7 @@ export default function FeatureSection() {
           href="tel:+14079424763"
           size="lg"
         >
-          <IconPhone size={33} stroke-width={1.5} color={"#225465"} />
+          <IconPhone size={33} stroke-width={1.5} color={"#006400"} />
         </ActionIcon>
       </Group>
 
